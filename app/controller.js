@@ -10,11 +10,11 @@
   angular
     .module('galiweather')
     .controller('MainController', ['QueryService',
-      '$timeout', '$route', '_', MainController]);
+      '$timeout', '$route', '_', 'preloader', MainController]);
 
 
 
-  function MainController(QueryService, $timeout, $route, _) {
+  function MainController(QueryService, $timeout, $route, _, preloader) {
 
     // 'controller as' syntax
     var self = this;
@@ -26,6 +26,47 @@
     self.results = [];
     self.singleResult = undefined;
 
+    /*****************************
+     * Preload Images
+     **************************/
+    self.cityImg = {
+      6357300: {
+        src:"images/cor.png",
+        loading: true
+      },
+      6359189: {
+        src:'images/lugo.png',
+        loading: true
+      },
+      6359872: {
+        src:'images/ourense.png',
+        loading: true
+      },
+      6360237: {
+        src:'images/pont.png',
+        loading: true
+      }
+    };
+
+    for(var img in self.cityImg)
+      preloader.preloadImages( [self.cityImg[img].src], img ).then(
+        function handleResolve( image ) {
+          // Loading was successful.
+          console.log(image)
+          self.cityImg[image.id].loading = false;
+          // self.cityImg[image.id].src = image.source;
+          console.info( self.cityImg);
+        },
+        function handleReject(imageLocation) {
+          // Loading failed on at least one image.
+          console.error( "Image Failed", imageLocation );
+          console.info( "Preload Failure" );
+        },
+        function handleNotify( event, id ) {
+          // $scope.percentLoaded = event.percent;
+          console.info( "Percent loaded:", event.percent, " ", event.id );
+        }
+      );
 
     /***********************************
      *

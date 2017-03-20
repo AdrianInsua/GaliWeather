@@ -21,16 +21,7 @@
     var directiveDefinitionObject = {
       restrict: 'E',
       replace: true,
-      templateUrl: 'components/directives/dashboard/dashboard.html',
-      link: function(scope){
-            var dateList = {}
-            scope.cityImg = {
-              6357300: 'images/cor.png',
-              6359189: 'images/lugo.png',
-              6359872: 'images/ourense.png',
-              6360237: 'images/pont.png'
-            };
-      }
+      templateUrl: 'components/directives/dashboard/dashboard.html'
     };
 
     return directiveDefinitionObject;

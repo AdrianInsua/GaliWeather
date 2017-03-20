@@ -2,7 +2,11 @@
   <h3><md-icon class="icon-info-1"></md-icon>{{"SEL_INFO_1" | translate}} <md-icon class="icon-eye-1"></md-icon> {{"SEL_INFO_2" | translate}}<md-icon class="icon-info-1"></md-icon></h3>
   <div ng-repeat="(pos, tile) in main.results" class="pull-left city-card" >
     <md-card id="{{tile.data.city.id}}">
-      <div class="full-width"><img flex="100" ng-src="{{cityImg[tile.data.city.id]}}" class="md-card-image"></div>
+      <div class="full-width"><img flex="100" ng-src="{{main.cityImg[tile.data.city.id].src}}" ng-hide="main.cityImg[tile.data.city.id].loading"
+                                   class="md-card-image opacity-hide smooth">
+        <md-progress-circular md-mode="indeterminate" class="opacity-hide smooth-fast full-width centering" layout-align="center center" ng-hide="!main.cityImg[tile.data.city.id].loading"></md-progress-circular>
+      </div>
+
       <md-card-title >
         <md-card-title-text>
           <span class="md-headline">{{tile.data.city.name}} </span>

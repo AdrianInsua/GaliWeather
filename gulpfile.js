@@ -84,9 +84,9 @@ gulp.task('minify-html', function() {
 
 // copy fonts from a module outside of our project (like Bower)
 gulp.task('fonts', function() {
-  gulp.src('./fonts/**/*.{ttf,woff,eof,eot,svg}')
+  gulp.src('./fonts/fonts/*.{ttf,woff,eof,eot,svg}')
     .pipe($.changed('./_build/fonts'))
-    .pipe(gulp.dest('./_build/css/'));
+    .pipe(gulp.dest('./_build/css/fonts/'));
 });
 
 // start webserver
