@@ -17,7 +17,7 @@
         <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-dynamic-height>
           <md-tab ng-repeat="(k,v) in main.daysFilter"
                   label="{{v | date: 'EEEE' | translate}}" flex="20">
-            <md-content class="md-padding result-list">
+            <md-content class="result-list">
               <div layout="row">
                 <p flex="50"><md-icon class="icon-water md-accent"></md-icon>{{"RAIN" | translate}}</p><p flex="50">{{(tile.data.list[k].rain === undefined)?"N/A":tile.data.list[k].rain}}</p>
               </div>
