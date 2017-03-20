@@ -1,0 +1,60 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-csp="" ng-app="galiweather"> <!--<![endif]-->
+
+	<head>
+
+		<base href="/">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>GaliWeather</title>
+		<meta name="description" content="weather prediction application for galician territory">
+
+		<!-- mobile meta -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!--[if IE]>
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="css/style.min.css"/>
+    <link href="https://file.myfontastic.com/QK7ncpQNcCK5WPajWHdEBE/icons.css" rel="stylesheet">
+	</head>
+
+	<body class="main-wrapper" md-colors="{'background-color': 'background-A400'}">
+
+		<!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+
+		<!-- Main view for templates -->
+		<div data-ng-view="" class="container"></div>
+
+	</body>
+
+	<!-- Vendors -->
+	<script src="js/nonangularlibs.js"></script>
+
+	<!-- Non-angular libraries -->
+	<script src="js/libs.js"></script>
+
+	<!-- Angular external libraries for application -->
+	<script src="js/angularlibs.js"></script>
+
+	<!-- Angular components -->
+	<script src="js/appcomponents.js"></script>
+
+	<!-- Application sections -->
+	<script src="js/mainapp.js"></script>
+
+	<!-- templates from $templateCache -->
+	<script type="text/javascript" src="js/templates.js"></script>
+
+
+</html>
