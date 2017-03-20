@@ -72,7 +72,7 @@
       day: {
         id: 2,
         placeholder: "SEL_DAY",
-        label: "Day.",
+        label: "Pred.",
         variable: '',
         values: days
       }
