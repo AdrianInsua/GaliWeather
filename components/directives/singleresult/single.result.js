@@ -16,12 +16,12 @@
     .directive('singleResult',  singleResult);
 
 
-  function singleResult($anchorScroll, $timeout) {
+  function singleResult() {
     // Definition of directive
     var directiveDefinitionObject = {
       restrict: 'E',
       replace: true,
-      templateUrl: 'components/directives/dashboard/single-result.html',
+      templateUrl: 'components/directives/singleresult/single-result.html',
       link: function(scope){
         scope.styles = {
           deg: {

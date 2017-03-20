@@ -9,8 +9,8 @@
 
   "SEL_PROV": "Select provinces",
   "SEL_DAY": "Select days",
-  "DAY": "Prediction days (default: 4)",
-  "PROV": "Province (default: all)",
+  "Pred.": "Prediction days (default: 4)",
+  "Prov.": "Province (default: all)",
 
   "DEMARK": "Uncheck",
 

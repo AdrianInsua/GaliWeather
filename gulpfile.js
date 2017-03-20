@@ -53,10 +53,9 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./_build/'));
 });
 
-// minify JS
-gulp.task('minify-json', function() {
+// minify JSon
+gulp.task('lang', function() {
   gulp.src('lang/*.json')
-    .pipe($.uglify())
     .pipe(gulp.dest('./_build/lang'));
 });
 
@@ -87,7 +86,7 @@ gulp.task('minify-html', function() {
 gulp.task('fonts', function() {
   gulp.src('./fonts/**/*.{ttf,woff,eof,eot,svg}')
     .pipe($.changed('./_build/fonts'))
-    .pipe(gulp.dest('./_build/fonts'));
+    .pipe(gulp.dest('./_build/css/'));
 });
 
 // start webserver
@@ -270,6 +269,7 @@ gulp.task('build', function(callback) {
     'clean:build',
     'sass:build',
     'images',
+    'lang',
     'templates',
     'usemin',
     'fonts',

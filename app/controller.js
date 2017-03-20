@@ -65,14 +65,14 @@
       province: {
         id: 1,
         placeholder: "SEL_PROV",
-        label: "PROV",
+        label: "Prov.",
         variable: '',
         values: provinces
       },
       day: {
         id: 2,
         placeholder: "SEL_DAY",
-        label: "DAY",
+        label: "Day.",
         variable: '',
         values: days
       }
