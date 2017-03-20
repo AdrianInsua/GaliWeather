@@ -1,0 +1,60 @@
+<!--loader-->
+<md-content class="loader full-width full-height absolute op-animation opacity-hide smooth" ng-hide="!main.loadingResults"
+            layout-xs="column" layout="column" flex="90" flex-gt-sm="70" md-colors="{'background-color': 'background-A400'}"
+            layout-align="center center">
+
+  <div class="full-width">
+    <h1 class="wrap text-center logo opacity-hide smooth" md-colors="{color: 'primary-400'}">
+      Gali<md-icon class="icon-water md-accent" ng-cloak></md-icon><span md-colors="{color: 'background-700'}">Weather</span>
+    </h1>
+  </div>
+  <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+</md-content>
+<!-- Main nav -->
+<main-nav></main-nav>
+<md-content class="centering height-hide  smooth" ng-hide="!main.loadingResults && !main.landingPage" layout-xs="column" layout="column" flex="90" flex-gt-sm="70"
+            layout-align="center center" md-colors="{'background-color': 'background-A400'}">
+
+  <div class="full-width" ng-if="main.landingPage" >
+    <h1 class="wrap text-center logo" md-colors="{color: 'primary-400'}">
+      Gali<md-icon class="icon-water md-accent" ng-cloak></md-icon><span md-colors="{color: 'background-700'}">Weather</span>
+    </h1>
+
+    <div  class="wrap search-box" layout="column" layout-padding
+          md-colors="{'background-color': 'background-50'}" >
+      <h2 class="center">{{"FILT_PARAM" | translate}}</h2>
+      <div layout="column" layout-gt-sm="row"  >
+        <md-input-container flex="10">
+          <label>{{main.menuBarOptions.province.label | translate}}</label>
+          <md-select ng-model="main.menuBarOptions.province.variable"
+                     multiple=>
+            <md-select-header layout="row">
+              <md-button ng-disabled="main.menuBarOptions.province.variable.length === 0" class="md-raised md-primary" ng-click="main.demark()">{{"DEMARK" | translate}}</md-button>
+            </md-select-header>
+            <md-optgroup label="{{main.menuBarOptions.province.label | translate}}" >
+              <md-option ng-repeat="(nk, nv) in main.menuBarOptions.province.values" ng-value="main.menuBarOptions.province.values[nk]">{{nk | translate}}</md-option>
+            </md-optgroup>
+          </md-select>
+        </md-input-container>
+        <md-input-container flex="10">
+          <label>{{main.menuBarOptions.day.label | translate}}</label>
+          <md-select ng-model="main.menuBarOptions.day.variable">
+            <md-optgroup label="{{main.menuBarOptions.day.label | translate}}" >
+              <md-option ng-repeat="(nk, nv) in main.menuBarOptions.day.values" ng-value="main.menuBarOptions.day.values[nk]">{{nk | translate}}</md-option>
+            </md-optgroup>
+          </md-select>
+        </md-input-container>
+      </div>
+      <md-button class="md-primary" ng-click="main.search()">{{"SEARCH" | translate}}</md-button>
+    </div>
+
+  </div>
+
+
+</md-content>
+
+<md-content class="dash-wrapper opacity-hide smooth" layout="column" md-colors="{'background-color': 'background-A400'}" ng-hide="main.landingPage">
+  <single-result></single-result>
+  <dash-board  ></dash-board>
+</md-content>
+<lateral-panel flex="20"></lateral-panel>

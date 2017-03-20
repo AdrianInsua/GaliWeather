@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-csp="" ng-app="galiweather"> <!--<![endif]-->
+
+	<head>
+
+		<base href="/">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>GaliWeather</title>
+		<meta name="description" content="weather prediction application for galician territory">
+
+		<!-- mobile meta -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!--[if IE]>
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+
+		<!-- CSS -->
+		<!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/styles.css" />
+    <!--<link href="https://file.myfontastic.com/QK7ncpQNcCK5WPajWHdEBE/icons.css" rel="stylesheet"/>-->
+    <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>-->
+		<!-- endbuild -->
+
+	</head>
+
+	<body class="main-wrapper" md-colors="{'background-color': 'background-A400'}">
+
+		<!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+
+		<!-- Main view for templates -->
+		<div data-ng-view="" class="container"></div>
+
+	</body>
+
+	<!-- Vendors -->
+	<!-- build:nonangularlibs js/nonangularlibs.js -->
+	<script type="text/javascript" src="js/nonangular/jquery-1.11.2.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- Non-angular libraries -->
+	<!-- build:libs js/libs.js -->
+	<script type="text/javascript" src="js/nonangular/lodash.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<!-- endbuild -->
+
+	<!-- Angular external libraries for application -->
+	<!-- build:angularlibs js/angularlibs.js -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate/angular-translate.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+	<!-- endbuild -->
+
+	<!-- Angular components -->
+	<!-- build:appcomponents js/appcomponents.js -->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/config.js"></script>
+	<script type="text/javascript" src="components/services/LocalStorage.service.js"></script>
+	<script type="text/javascript" src="components/services/queryService.service.js"></script>
+	<script type="text/javascript" src="components/directives/navigation/main.nav.directive.js"></script>
+	<script type="text/javascript" src="components/directives/dashboard/dashboard.js"></script>
+	<script type="text/javascript" src="components/directives/dashboard/single.result.js"></script>
+	<script type="text/javascript" src="components/directives/lateral/lateral.panel.js"></script>
+	<!-- endbuild -->
+
+	<!-- Application sections -->
+	<!-- build:mainapp js/mainapp.js -->
+	<script type="text/javascript" src="app/controller.js"></script>
+	<!-- endbuild -->
+
+	<!-- templates from $templateCache -->
+	<!-- build:templates -->
+	<!-- endbuild -->
+
+
+</html>

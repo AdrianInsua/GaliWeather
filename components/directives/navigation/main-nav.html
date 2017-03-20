@@ -1,0 +1,13 @@
+<md-toolbar class="search-bar md-primary" ng-if="!main.landingPage && !main.loadingResults">
+  <div class="md-toolbar-tools">
+    <md-button aria-label="Go Back" ng-click="main.goBack()">
+      {{ "BACK" | translate }}
+    </md-button>
+    <md-truncate>Gali<span class="strong">WEATHER</span></md-truncate>
+    <div flex></div>
+    <md-button aria-label="Filters" ng-click="toggleRight()">
+      <md-icon class="icon-filter-1 font-2x"></md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+

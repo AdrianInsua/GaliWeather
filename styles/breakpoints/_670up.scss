@@ -1,0 +1,54 @@
+/******************************************************************
+
+670px and up
+
+******************************************************************/
+
+/******************************
+GENERAL STYLES
+ *********************/
+
+h1{
+  font-size: 5em;
+}
+
+h2{
+  font-size: 1.2em;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.logo md-icon{
+  margin: -1em .7em 0 0;
+}
+/********************
+RESULTS
+ ***********************/
+.city-card{
+  width:45%;
+}
+.extra-information.ng-hide{
+  height:0;
+}
+
+.extra-information{
+  height:400px;
+}
+
+.results-wrapper{
+  padding:5%;
+}
+
+.results-wrapper.ng-hide{
+  height:0;
+  padding:0;//arreglo por seguridad para que no muestra nada al esconderse
+}
+
+.city-card{
+  margin:2%;
+}
+
+.single-result-card{
+  margin: 2em;
+}

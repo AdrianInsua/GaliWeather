@@ -1,0 +1,51 @@
+<md-content class="full-width full-height height-hide smooth"  md-colors="{'background-color': 'background-A400'}"
+            ng-if="!main.landingPage"
+            ng-hide="!main.showSingle">
+  <md-toolbar class="md-hue-2">
+    <div class="md-toolbar-tools">
+      Coruña
+    </div>
+  </md-toolbar>
+  <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-dynamic-height>
+    <md-tab ng-repeat="(k, tab) in main.daysFilter"
+            label="{{tab | date: 'EEEE' | translate}}">
+              <md-content layout-padding="" layout-align="center center" md-colors="{'background-color': 'background-A400'}">
+                <md-grid-list md-cols-gt-md="12" md-cols="4" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px" md-gutter-md="8px" md-gutter="4px">
+                  <md-grid-tile ng-repeat="tile in main.singleResult[k]" ng-class="
+                    styles[tile.name].color
+                  "
+                                md-colspan="2" md-rowspan="3"
+                                md-colspan-gt-sm="2" md-rowspan-gt-sm="2">
+                    <div layout="column" class="full-width full-height">
+                      <md-toolbar class="translucid">
+                        <div class="md-toolbar-tools" layout layout-align="center center">
+                          {{styles[tile.name].name | translate}}
+                        </div>
+                      </md-toolbar>
+                      <md-content layout="row" layout-align="center center" class="transparent full-height" md-colors="{color: 'background-A200'}">
+                        <p layout-margin ng-if="tile.name !== 'weather'">
+                          <md-icon ng-class="styles[tile.name].ico" class="font-2x single-result-icon"  md-colors="{color: 'background-A200'}" ></md-icon>
+                        </p>
+                        <p layout-margin ng-if="tile.name !== 'temp' && tile.name !== 'weather'">
+                          {{tile.data}}{{styles[tile.name].unit}}
+                        </p>
+                        <div layout-margin ng-if="tile.name === 'temp'">
+                          <p>MAX: {{tile.data.max}}{{styles.temp.unit}}</p>
+                          <p>MIN: {{tile.data.min}}{{styles.temp.unit}}</p>
+                        </div>
+                        <div layout-margin ng-if="tile.name === 'weather'">
+                          <p>{{tile.data[0].id | translate}}</p>
+                        </div>
+                      </md-content>
+
+                    </div>
+
+                  </md-grid-tile>
+                </md-grid-list>
+              </md-content>
+    </md-tab>
+  </md-tabs>
+<div class="full-width" layout="row" layout-align="center center" layout-padding ng-if="main.results.length > 1">
+  <md-button class="md-primary md-raised md-hue" ng-click="main.goBack()">{{'BACK_LIST' | translate}}</md-button>
+</div>
+</md-content>

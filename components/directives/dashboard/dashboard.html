@@ -1,0 +1,48 @@
+<md-content class="results-wrapper full-width full-height height-hide smooth"  md-colors="{'background-color': 'background-A400'}" ng-hide="main.showSingle">
+  <h3><md-icon class="icon-info-1"></md-icon>{{"SEL_INFO_1" | translate}} <md-icon class="icon-eye-1"></md-icon> {{"SEL_INFO_2" | translate}}<md-icon class="icon-info-1"></md-icon></h3>
+  <div ng-repeat="(pos, tile) in main.results" class="pull-left city-card" >
+    <md-card id="{{tile.data.city.id}}">
+      <div class="full-width"><img flex="100" ng-src="{{cityImg[tile.data.city.id]}}" class="md-card-image"></div>
+      <md-card-title >
+        <md-card-title-text>
+          <span class="md-headline">{{tile.data.city.name}} </span>
+          <span class="md-subhead">{{tile.data.list[selectedIndex].weather[0].id  | translate}}</span>
+        </md-card-title-text>
+        <md-button class="md-fab md-accent md-mini view-more" ng-click="main.updateSingleResult(tile.data.list)">
+          <md-icon class="icon-eye-1"></md-icon>
+          <md-tooltip md-direction="bottom">{{"MORE" | translate}}</md-tooltip>
+        </md-button>
+      </md-card-title>
+      <md-card-content>
+        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect md-dynamic-height>
+          <md-tab ng-repeat="(k,v) in main.daysFilter"
+                  label="{{v | date: 'EEEE' | translate}}" flex="20">
+            <md-content class="md-padding result-list">
+              <div layout="row" ng-if="tile.data.list[k].rain !== undefined">
+                <p flex="50"><md-icon class="icon-water md-accent"></md-icon>{{"RAIN" | translate}}</p><p flex="50">{{tile.data.list[k].rain}}</p>
+              </div>
+              <div layout="row"ng-if=" tile.data.list[k].clouds !== undefined">
+                <p flex="50"><md-icon class="icon-cloud-1"></md-icon>{{"CLOUDS" | translate}}</p><p flex="50">{{tile.data.list[k].clouds}}%</p>
+              </div>
+              <div layout="row" ng-if="tile.data.list[k].humidity !== undefined">
+                <p flex="50"><md-icon class="icon-water md-accent"></md-icon>{{"HUMIDITY" | translate}}</p><p flex="50">{{tile.data.list[k].humidity}}%</p>
+              </div>
+              <div layout="row" ng-if="tile.data.list[k].speed !== undefined">
+                <p flex="50"><md-icon class="icon-air md-primary"></md-icon>{{"W_SPEED" | translate}}</p><p flex="50">{{tile.data.list[k].speed}}m/s</p>
+              </div>
+              <div layout="row" ng-if="tile.data.list[k].temp !== undefined">
+                <p flex="50"><md-icon class="icon-thermometer md-warn"></md-icon><md-truncate>{{"TEMP" | translate}}</md-truncate></p>
+                <md-chips flex="50">
+                  <md-chip md-colors="{'background-color': 'warn-500', color:'warn-A400'}">{{tile.data.list[k].temp.max}}ºC</md-chip>
+                  <md-chip md-colors="{'background-color': 'accent-500', color: 'warn-A400'}">{{tile.data.list[k].temp.min}}ºC</md-chip>
+                </md-chips>
+              </div>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+
+      </md-card-content>
+
+    </md-card>
+  </div>
+</md-content>

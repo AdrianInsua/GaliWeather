@@ -1,0 +1,32 @@
+<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right"
+            >
+  <md-toolbar class="md-primary md-hue-2">
+    <div class="md-toolbar-tools">
+    {{"FILTERS" | translate}}
+    </div>
+  </md-toolbar>
+  <md-content layout-padding layout="column">
+    <md-input-container flex="100">
+      <label>{{main.menuBarOptions.province.label | translate}}</label>
+      <md-select ng-model="main.menuBarOptions.province.variable"
+                 multiple=>
+        <md-select-header layout="row">
+          <md-button ng-disabled="main.menuBarOptions.province.variable.length === 0" class="md-raised md-primary" ng-click="main.demark()">{{"DEMARK" | translate}}</md-button>
+        </md-select-header>
+        <md-optgroup label="{{main.menuBarOptions.province.label | translate}}" >
+          <md-option ng-repeat="(nk, nv) in main.menuBarOptions.province.values" ng-value="main.menuBarOptions.province.values[nk]">{{nk | translate}}</md-option>
+        </md-optgroup>
+      </md-select>
+    </md-input-container>
+    <md-input-container flex="100">
+      <label>{{main.menuBarOptions.day.label | translate}}</label>
+      <md-select ng-model="main.menuBarOptions.day.variable">
+        <md-optgroup label="{{main.menuBarOptions.day.label | translate}}" >
+          <md-option ng-repeat="(nk, nv) in main.menuBarOptions.day.values" ng-value="main.menuBarOptions.day.values[nk]">{{nk | translate}}</md-option>
+        </md-optgroup>
+      </md-select>
+    </md-input-container>
+    <md-button class="md-primary" ng-click="main.search();toggleRight()">{{"SEARCH" | translate}}</md-button>
+  </md-content>
+
+</md-sidenav>
